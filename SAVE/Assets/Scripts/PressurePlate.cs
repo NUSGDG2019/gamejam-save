@@ -24,9 +24,9 @@ public class PressurePlate : Trigger
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.name == "Player")
+        if (collider.gameObject.name == "Player")
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
             Debug.Log("Player Collision Enter");
@@ -34,9 +34,9 @@ public class PressurePlate : Trigger
         }
     }
 
-    void OnCollisionExit(Collision collision)
+    void OnTriggerExit(Collider collider)
     {
-        if (collision.gameObject.name == "Player")
+        if (collider.gameObject.name == "Player")
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
             depressTimer = true;
