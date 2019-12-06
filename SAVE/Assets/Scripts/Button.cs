@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button : MonoBehaviour
+public class Button : Trigger
 {
-    public GameObject door1;
-    public GameObject door2;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +16,13 @@ public class Button : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider collider)
     {
-        print("hey");
+        if (collider.gameObject.name == "Player")
+        {
+            //If the GameObject's name matches the one you suggest, output this message in the console
+            Debug.Log("Player Collision Enter");
+            TriggerOn();
+        }
     }
 }
