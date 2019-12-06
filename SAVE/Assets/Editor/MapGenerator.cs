@@ -13,9 +13,9 @@ public class MapGenerator : ScriptableWizard
 {
     [Header("Resolution")]
     [SerializeField]
-    private int width = 10;
+    private int width = 11;
     [SerializeField]
-    private int height = 10;
+    private int height = 9;
 
     [Header("Bricks")]
     [SerializeField]
@@ -32,13 +32,13 @@ public class MapGenerator : ScriptableWizard
     [Header("BrickParticulars")]
     [Header("Boundary Bricks")]
     [SerializeField]
-    private int[] ups = { 0, 0, 1, 4, 5, 6};
+    private int[] ups = { 0, 1, 8, 0, 1, 1, 6, 4, 4, 1, 4, 0, 1, 4 };
     [SerializeField]
-    private int[] downs = { 7, 1, 4, 5, 6, 7 };
+    private int[] downs = { 1, 9, 9, 9, 3, 3, 7, 6, 6, 3, 7, 7, 3, 7 };
     [SerializeField]
-    private int[] lefts = { 0, 1, 2, 6, 2, 1 };
+    private int[] lefts = { 0, 0, 1, 10, 2, 4, 1, 2, 4, 6, 6, 7, 8, 8 };
     [SerializeField]
-    private int[] rights = { 1, 7, 7, 7, 7, 7 };
+    private int[] rights = { 11, 1, 11, 11, 3, 5, 5, 3, 5, 7, 7, 8, 10, 10 };
 
 
     private MapType[,] map;
