@@ -5,10 +5,8 @@ using UnityEngine;
 public class Door : Activator
 {
     public bool isOpen;
-    public CameraFollow mainCamera;
     void Start()
     {
-        mainCamera = Camera.main.GetComponent<CameraFollow>();
         if (isOpen)
         {
             this.gameObject.GetComponent<MeshRenderer>().enabled = false;
