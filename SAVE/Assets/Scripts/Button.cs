@@ -18,7 +18,7 @@ public class Button : Trigger
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.name == "Player")
+        if (collider.tag == "aPlayer" | collider.tag == "NPC")
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
             Debug.Log("Player Collision Enter");

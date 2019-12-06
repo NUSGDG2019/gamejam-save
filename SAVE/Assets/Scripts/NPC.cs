@@ -27,7 +27,7 @@ public class NPC : MonoBehaviour
         {
             this.transform.localPosition = currentTimeLeft > roundTripTime / 2 ?
                  startPos.localPosition * (float)(2 * (roundTripTime - currentTimeLeft) / roundTripTime) + endPos.localPosition * (float)(1-2 * (roundTripTime - currentTimeLeft) / roundTripTime) :
-                 startPos.localPosition * (float)(1- 2 * currentTimeLeft / roundTripTime) + endPos.localPosition * (float)(2*currentTimeLeft/roundTripTime);
+                 endPos.localPosition * (float)(1- 2 * currentTimeLeft / roundTripTime) + startPos.localPosition * (float)(2*currentTimeLeft/roundTripTime);
             currentTimeLeft -= Time.deltaTime;
         } else if(isWalking)
         {

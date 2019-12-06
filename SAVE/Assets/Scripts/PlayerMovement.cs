@@ -81,22 +81,22 @@ public class PlayerMovement : MonoBehaviour
         doorStates.Clear();
     }
 
-    public void OnTriggerEnter(Collider collider)
-    {
-        Debug.Log("Enter trigger");
-        if (collider.tag == "Switch")
-        {
-            collider.enabled = false;
-        }
-    }
+    //public void OnTriggerEnter(Collider collider)
+    //{
+    //    Debug.Log("Enter trigger");
+    //    if (collider.tag == "Switch")
+    //    {
+    //        collider.enabled = false;
+    //    }
+    //}
 
-    public void OnTriggerExit(Collider collider)
-    {
-        Debug.Log("Exit trigger");
-        if (collider.tag == "Switch")
-        {
-            collider.enabled = true;
-        }
-    }
+    //public void OnTriggerExit(Collider collider)
+    //{
+    //    Debug.Log("Exit trigger");
+    //    if (collider.tag == "Switch")
+    //    {
+    //        collider.enabled = true;
+    //    }
+    //}
 
 }
