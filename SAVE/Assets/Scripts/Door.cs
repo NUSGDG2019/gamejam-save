@@ -14,8 +14,12 @@ public class Door : Activator
 
     private float timeLeft = 0;
     public bool isOpen;
+
+    private float localX;
+
     void Start()
     {
+        localX = this.gameObject.transform.localPosition.x;
         if (isOpen)
         {
             this.gameObject.GetComponent<MeshRenderer>().enabled = false;
@@ -46,17 +50,17 @@ public class Door : Activator
         {
             timeLeft -= Time.deltaTime;
             this.gameObject.GetComponent<Collider>().enabled = true;
+            this.gameObject.GetComponent<MeshRenderer>().enabled = true;
             resizeDoor(1 - timeLeft / OpenTime);
         } else if(isClosing)
         {
             isClosing = false;
-            // Hide attached gameObject
-            this.gameObject.GetComponent<MeshRenderer>().enabled = true;
         }
     }
 
     public void Trigger()
     {
+        Debug.Log("Trigger");
         if (isOpen)
         {
             isOpen = false;
@@ -93,7 +97,7 @@ public class Door : Activator
     void resizeDoor(float TimePercentage)
     {
         // 0 to be open and 1 to be closed
-        this.gameObject.transform.localPosition = new Vector3(this.gameObject.transform.localPosition.x, this.gameObject.transform.localPosition.y, (TimePercentage-1)*0.5f);
-        this.gameObject.transform.localScale = new Vector3(this.gameObject.transform.localScale.x, this.gameObject.transform.localScale.y, TimePercentage);
+        this.gameObject.transform.localPosition = new Vector3(localX + (TimePercentage-1)*0.5f, this.gameObject.transform.localPosition.y, this.gameObject.transform.localPosition.z);
+        this.gameObject.transform.localScale = new Vector3(TimePercentage, this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
     }
 }
