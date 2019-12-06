@@ -31,11 +31,7 @@ public class Timer : MonoBehaviour
             TimeLeft = active ? activeTime : inactiveTime;
         } else
         {
-<<<<<<< Updated upstream
 			TimeLeft -= Time.deltaTime;
-=======
-            TimeLeft -= Time.deltaTime;
->>>>>>> Stashed changes
         }
     }
 }
