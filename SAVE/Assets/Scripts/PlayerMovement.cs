@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void saveState()
     {
+        Debug.Log("Save State");
         doorStates.Clear();
         foreach (Transform child in doors.transform)
         {
@@ -62,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void loadState()
     {
+        Debug.Log("Load State");
         for (int i = 0; i < doorStates.Count; ++i)
         {
 
@@ -77,6 +79,24 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         doorStates.Clear();
+    }
+
+    public void OnTriggerEnter(Collider collider)
+    {
+        Debug.Log("Enter trigger");
+        if (collider.tag == "Switch")
+        {
+            collider.enabled = false;
+        }
+    }
+
+    public void OnTriggerExit(Collider collider)
+    {
+        Debug.Log("Exit trigger");
+        if (collider.tag == "Switch")
+        {
+            collider.enabled = true;
+        }
     }
 
 }
