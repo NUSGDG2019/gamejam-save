@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public float movementSpeed;
+    public float movementSpeed = 3;
     public bool onFloor = true;
     public List<bool> doorStates = new List<bool>();
     public GameObject doors;

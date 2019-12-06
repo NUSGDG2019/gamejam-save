@@ -7,9 +7,10 @@ MonoImporter:
   - m_ViewDataDictionary: {instanceID: 0}
   - boundaryBrick: {fileID: 5682766037531836718, guid: ca94e75a2a55a4ed7be6babd77f53cae,
       type: 3}
-  - whateverBrick: {fileID: 5682766037531836718, guid: ca94e75a2a55a4ed7be6babd77f53cae,
+  - pathBrick: {fileID: 5682766037531836718, guid: 9e637261f46464350b80d1dfb29cbfb1,
       type: 3}
   - boundaryParent: {instanceID: 0}
+  - pathParent: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
