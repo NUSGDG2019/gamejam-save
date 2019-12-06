@@ -80,6 +80,7 @@ public class Door : Activator
 
     public void Open()
     {
+        isOpen = true;
         isOpening = true;
         timeLeft = OpenTime;
         this.gameObject.GetComponent<Collider>().enabled = false;
@@ -87,6 +88,7 @@ public class Door : Activator
 
     public void Close()
     {
+        isOpen = false;
         isClosing = true;
         timeLeft = CloseTime;
         this.gameObject.GetComponent<Collider>().enabled = true;
