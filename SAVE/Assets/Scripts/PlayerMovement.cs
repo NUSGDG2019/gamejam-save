@@ -6,6 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float movementSpeed = 3;
+    public bool onFloor = true;
+    public List<bool> doorStates = new List<bool>();
+    public GameObject doors;
 
     // Use this for initialization
     void Start()
@@ -16,6 +19,13 @@ public class PlayerMovement : MonoBehaviour
     //Update is called once per frame
     void FixedUpdate()
     {
+        if (Input.GetKey("o"))
+        {
+            saveState();
+        } else if (Input.GetKey("p"))
+        {
+            loadState();
+        }
 
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("w"))
         {
@@ -39,4 +49,34 @@ public class PlayerMovement : MonoBehaviour
             transform.position -= transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
         }
     }
+
+    public void saveState()
+    {
+        doorStates.Clear();
+        foreach (Transform child in doors.transform)
+        {
+            doorStates.Add(child.GetComponent<Door>().isOpen);
+        }
+
+    }
+
+    public void loadState()
+    {
+        for (int i = 0; i < doorStates.Count; ++i)
+        {
+
+            Debug.Log(i);
+            Door doorScript = doors.transform.GetChild(i).GetComponent<Door>();
+            
+            if (doorScript.isOpen && !doorStates[i])
+            {
+                doorScript.Trigger();
+            } else if (!doorScript.isOpen && doorStates[i])
+            {
+                doorScript.Trigger();
+            }
+        }
+        doorStates.Clear();
+    }
+
 }

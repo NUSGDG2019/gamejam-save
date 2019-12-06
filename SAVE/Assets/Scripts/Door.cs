@@ -13,9 +13,18 @@ public class Door : Activator
     private bool isClosing = false;
 
     private float timeLeft = 0;
+    public bool isOpen;
     void Start()
     {
-
+        if (isOpen)
+        {
+            this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            this.gameObject.GetComponent<Collider>().enabled = false;
+        } else
+        {
+            this.gameObject.GetComponent<MeshRenderer>().enabled = true;
+            this.gameObject.GetComponent<Collider>().enabled = true;
+        }
     }
 
     // Update is called once per frame
@@ -43,6 +52,19 @@ public class Door : Activator
             isClosing = false;
             // Hide attached gameObject
             this.gameObject.GetComponent<MeshRenderer>().enabled = true;
+        }
+    }
+
+    public void Trigger()
+    {
+        if (isOpen)
+        {
+            isOpen = false;
+            TriggerOff();
+        } else
+        {
+            isOpen = true;
+            TriggerOn();
         }
     }
 

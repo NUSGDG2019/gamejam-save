@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scene/testscene-lilian.unity
+    guid: 1abbf979a43efd6419cce654fcd96b7c
   m_configObjects: {}
