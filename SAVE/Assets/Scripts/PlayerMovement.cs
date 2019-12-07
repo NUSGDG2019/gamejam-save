@@ -61,10 +61,13 @@ public class PlayerMovement : MonoBehaviour
             doorStates.Add(child.GetComponent<Door>().isOpen);
         }
 
-        platformStates.Clear();
-        foreach (Transform child in platforms.transform)
+        if (platforms != null)
         {
-            platformStates.Add(child.GetComponent<Platform>().isClear);
+            platformStates.Clear();
+            foreach (Transform child in platforms.transform)
+            {
+                platformStates.Add(child.GetComponent<Platform>().isClear);
+            }
         }
 
     }
@@ -88,22 +91,26 @@ public class PlayerMovement : MonoBehaviour
         }
         doorStates.Clear();
 
-        for (int i = 0; i < platformStates.Count; ++i)
+        if (platforms != null)
         {
-
-            Debug.Log(i);
-            Platform platformScript = platforms.transform.GetChild(i).GetComponent<Platform>();
-
-            if (platformScript.isClear && !platformStates[i])
+            for (int i = 0; i < platformStates.Count; ++i)
             {
-                platformScript.Trigger();
+
+                Debug.Log(i);
+                Platform platformScript = platforms.transform.GetChild(i).GetComponent<Platform>();
+
+                if (platformScript.isClear && !platformStates[i])
+                {
+                    platformScript.Trigger();
+                }
+                else if (!platformScript.isClear && platformStates[i])
+                {
+                    platformScript.Trigger();
+                }
             }
-            else if (!platformScript.isClear && platformStates[i])
-            {
-                platformScript.Trigger();
-            }
+            platformStates.Clear();
         }
-        platformStates.Clear();
+
     }
 }
 

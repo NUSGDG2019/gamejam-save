@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
             directionVector.x *= -1;
         }
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "aPlayer")
         {
             isStuck = true;
         }
@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "aPlayer")
         {
             isStuck = false;
         }
