@@ -191,7 +191,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u2500\u2500\u2500\u2500\u2500 Click to begin \u2500\u2500\u2500\u2500\u2500"
+  m_Text: "\u2500\u2500\u2500\u2500\u2500 Congratulations\u2500\u2500\u2500\u2500\u2500"
 --- !u!222 &177264225
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -479,6 +479,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a154dfcae167e0f45901dfd41b8d659b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOutUIImage: {fileID: 1196257399}
+  fadeSpeed: 0.8
 --- !u!1 &971939793
 GameObject:
   m_ObjectHideFlags: 0
