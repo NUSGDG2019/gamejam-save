@@ -8,7 +8,9 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 3;
     public bool onFloor = true;
     public List<bool> doorStates = new List<bool>();
+    public List<bool> platformStates = new List<bool>();
     public GameObject doors;
+    public GameObject platforms;
 
     // Use this for initialization
     void Start()
@@ -59,6 +61,15 @@ public class PlayerMovement : MonoBehaviour
             doorStates.Add(child.GetComponent<Door>().isOpen);
         }
 
+        if (platforms != null)
+        {
+            platformStates.Clear();
+            foreach (Transform child in platforms.transform)
+            {
+                platformStates.Add(child.GetComponent<Platform>().isClear);
+            }
+        }
+
     }
 
     public void loadState()
@@ -79,7 +90,29 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         doorStates.Clear();
+
+        if (platforms != null)
+        {
+            for (int i = 0; i < platformStates.Count; ++i)
+            {
+
+                Debug.Log(i);
+                Platform platformScript = platforms.transform.GetChild(i).GetComponent<Platform>();
+
+                if (platformScript.isClear && !platformStates[i])
+                {
+                    platformScript.Trigger();
+                }
+                else if (!platformScript.isClear && platformStates[i])
+                {
+                    platformScript.Trigger();
+                }
+            }
+            platformStates.Clear();
+        }
+
     }
+}
 
     //public void OnTriggerEnter(Collider collider)
     //{
@@ -99,4 +132,3 @@ public class PlayerMovement : MonoBehaviour
     //    }
     //}
 
-}

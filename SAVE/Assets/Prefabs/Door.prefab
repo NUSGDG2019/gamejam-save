@@ -105,6 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ebd41114895147448e6870873f99882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CloseTime: 0.5
-  OpenTime: 0.5
+  CloseTime: 0.1
+  OpenTime: 0.1
   isOpen: 1
