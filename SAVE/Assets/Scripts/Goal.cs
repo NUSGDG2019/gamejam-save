@@ -44,11 +44,18 @@ public class Goal : MonoBehaviour
         {
             SceneManager.LoadScene(nextSceneName);
         }
+
+        if (Input.GetKey("-"))
+        {
+            audioSource.PlayOneShot(audioClip);
+            // Go to the next Scene
+            isExiting = true;
+            player.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        print("ASDD");
         audioSource.PlayOneShot(audioClip);
         // Go to the next Scene
         isExiting = true;
