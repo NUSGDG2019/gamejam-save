@@ -8,6 +8,9 @@ TagManager:
   - Switch
   - NPC
   - aPlayer
+  - Wall
+  - saveIndicator
+  - loadIndicator
   layers:
   - Default
   - TransparentFX
