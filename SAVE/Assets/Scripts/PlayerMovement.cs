@@ -29,11 +29,7 @@ public class PlayerMovement : MonoBehaviour
             loadState();
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("w"))
-        {
-            transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed * 2.5f;
-        }
-        else if (Input.GetKey("w") && !Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey("w"))
         {
             transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed;
         }
