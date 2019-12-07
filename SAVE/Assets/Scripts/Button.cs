@@ -10,10 +10,14 @@ public class Button : Trigger
     private AudioClip audioClip;
     [SerializeField]
     private GameObject mesh;
+
+    private Color colorForStorage;
+    private Vector3 localScaleForStorage;
     // Start is called before the first frame update
     void Start()
     {
-        
+        colorForStorage = mesh.GetComponent<MeshRenderer>().material.color;
+        localScaleForStorage = mesh.transform.localScale;
     }
 
     // Update is called once per frame
@@ -46,8 +50,8 @@ public class Button : Trigger
     {
         if (collider.tag == "aPlayer" | collider.tag == "NPC")
         {
-            mesh.GetComponent<MeshRenderer>().material.color = mesh.GetComponent<MeshRenderer>().material.color * (float)2.0;
-            mesh.transform.localScale = new Vector3(mesh.transform.localScale.x, mesh.transform.localScale.y * 2.0f, mesh.transform.localScale.z);
+            mesh.GetComponent<MeshRenderer>().material.color = colorForStorage;
+            mesh.transform.localScale = localScaleForStorage;
         }
     }
 
