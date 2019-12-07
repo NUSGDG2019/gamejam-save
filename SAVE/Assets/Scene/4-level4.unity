@@ -10870,5 +10870,10 @@ PrefabInstance:
       propertyPath: RaiseTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2703358961694034192, guid: e4ba7a21b24b8406fa5e319cc73484da,
+        type: 3}
+      propertyPath: isOpen
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4ba7a21b24b8406fa5e319cc73484da, type: 3}
