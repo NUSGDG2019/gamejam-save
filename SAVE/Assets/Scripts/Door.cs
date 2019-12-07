@@ -90,8 +90,9 @@ public class Door : Activator
         this.gameObject.GetComponent<MeshRenderer>().enabled = true;
     }
 
-    void resizeDoor(float TimePercentage)
+    public virtual void resizeDoor(float TimePercentage)
     {
+        print(gameObject.name);
         // 0 to be open and 1 to be closed
         float angle = transform.rotation.eulerAngles.y * Mathf.Deg2Rad + Mathf.PI/2;
         Vector3 direction = new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle));
