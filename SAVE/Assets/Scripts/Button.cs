@@ -38,7 +38,6 @@ public class Button : Trigger
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
             Debug.Log("Player Collision Enter");
-            pressMesh();
             TriggerOn();
         }
     }
