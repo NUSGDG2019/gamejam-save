@@ -3283,6 +3283,8 @@ MonoBehaviour:
   nextSceneName: 6-level6
   exitingTime: 2
   player: {fileID: 1309028600}
+  audioSource: {fileID: 1264499637}
+  audioClip: {fileID: 8300000, guid: f9257aeb102f24d8ba6cd280ab63abe4, type: 3}
 --- !u!1001 &595933332
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1416,6 +1416,8 @@ MonoBehaviour:
   nextSceneName: 4-level4
   exitingTime: 2
   player: {fileID: 1309028600}
+  audioSource: {fileID: 1264499637}
+  audioClip: {fileID: 8300000, guid: f9257aeb102f24d8ba6cd280ab63abe4, type: 3}
 --- !u!1001 &613823785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5571,6 +5573,11 @@ PrefabInstance:
     - target: {fileID: 2366815415826272600, guid: 41d466bbf75114fea9dfd544adc916d0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366815415767635020, guid: 41d466bbf75114fea9dfd544adc916d0,
+        type: 3}
+      propertyPath: directionVector.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
