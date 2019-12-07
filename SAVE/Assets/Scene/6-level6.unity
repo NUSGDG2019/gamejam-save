@@ -9510,7 +9510,7 @@ MonoBehaviour:
   isRotating: 1
   rotateSpeed: 30
   goalMaterial: {fileID: 2100000, guid: 01c5f217aa1ab42b28bc6ab314e94565, type: 2}
-  nextSceneName: 8-level8
+  nextSceneName: 7-level7
   exitingTime: 2
   player: {fileID: 1309028600}
   audioSource: {fileID: 1264499637}
@@ -11399,16 +11399,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2120104037793316310, guid: c1e82f736e1d240f0a98d2eaa08559e5,
-        type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 157545138}
-    - target: {fileID: 2120104037793316310, guid: c1e82f736e1d240f0a98d2eaa08559e5,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 794736308}
     - target: {fileID: 2120104038038763779, guid: c1e82f736e1d240f0a98d2eaa08559e5,
         type: 3}
       propertyPath: m_Mesh
@@ -11434,6 +11424,16 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2120104037793316310, guid: c1e82f736e1d240f0a98d2eaa08559e5,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 157545138}
+    - target: {fileID: 2120104037793316310, guid: c1e82f736e1d240f0a98d2eaa08559e5,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 794736308}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1e82f736e1d240f0a98d2eaa08559e5, type: 3}
 --- !u!4 &710967412 stripped
