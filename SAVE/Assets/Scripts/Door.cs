@@ -56,7 +56,6 @@ public class Door : Activator
 
     public void Trigger()
     {
-        Debug.Log("Trigger");
         if (isOpen)
         {
             isOpen = false;
