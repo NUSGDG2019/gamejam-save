@@ -101,7 +101,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audioSource: {fileID: 0}
-  audioClip: {fileID: 8300000, guid: d22884518137b494e9ecfadc945870b4, type: 3}
+  audioClip: {fileID: 8300000, guid: 02f51e1024f7f914f9d4ad690d803951, type: 3}
   mesh: {fileID: 7928496758504857330}
 --- !u!136 &6121110418023736253
 CapsuleCollider:
