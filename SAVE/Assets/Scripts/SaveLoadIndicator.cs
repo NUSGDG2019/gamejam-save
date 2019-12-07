@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SaveLoadIndicator : MonoBehaviour
 {
@@ -23,12 +24,15 @@ public class SaveLoadIndicator : MonoBehaviour
     [SerializeField]
     private ParticleSystem effectLoad;
 
+    [SerializeField]
+    private TextMeshPro text;
     [Header("Player settings for save and load")]
     [SerializeField]
     private PlayerMovement player;
     private bool isSaved = false;
     private RaycastHit hit;
     private Material[] materials;
+    private int saveCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +65,8 @@ public class SaveLoadIndicator : MonoBehaviour
         indicatorMesh.GetComponent<Renderer>().materials = materials;
         effectSave.gameObject.SetActive(true);
         effectSave.Play();
+        saveCount++;
+        text.text = saveCount.ToString();
     }
 
     public void Load()
