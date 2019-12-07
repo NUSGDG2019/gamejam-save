@@ -52,7 +52,6 @@ public class Door : Activator
 
     public void Trigger()
     {
-        Debug.Log("Trigger");
         if (isOpen)
         {
             isOpen = false;
@@ -91,13 +90,14 @@ public class Door : Activator
         this.gameObject.GetComponent<MeshRenderer>().enabled = true;
     }
 
-    void resizeDoor(float TimePercentage)
+    public virtual void resizeDoor(float TimePercentage)
     {
+        print(gameObject.name);
         // 0 to be open and 1 to be closed
         float angle = transform.rotation.eulerAngles.y * Mathf.Deg2Rad + Mathf.PI/2;
         Vector3 direction = new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle));
 
-        transform.position = originalPosition + direction * (TimePercentage - 1) * 0.5f;
+        transform.localPosition = originalPosition + direction * (TimePercentage - 1) * 0.5f;
         //this.gameObject.transform.localPosition = new Vector3(this.gameObject.transform.localPosition.x, this.gameObject.transform.localPosition.y, localZ + (TimePercentage - 1) * 0.5f);
         this.gameObject.transform.localScale = new Vector3(TimePercentage, this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
     }

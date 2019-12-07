@@ -17,6 +17,10 @@ public class Goal : MonoBehaviour
     private double exitingTime = 2.0;
     [SerializeField]
     private GameObject player;
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip audioClip;
 
     private bool isExiting;
     private double exitingTimeLeft;
@@ -47,6 +51,7 @@ public class Goal : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         this.GetComponent<MeshRenderer>().material = goalMaterial;
+        audioSource.PlayOneShot(audioClip);
         // Go to the next Scene
         isExiting = true;
         player.SetActive(false);

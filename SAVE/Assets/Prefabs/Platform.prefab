@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2703358961694034192}
   m_Layer: 0
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,6 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf641b287caa64050a76e52d28076b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RaiseTime: 1
-  ClearTime: 1
-  isClear: 0
+  CloseTime: 0.1
+  OpenTime: 0.1
+  isOpen: 0

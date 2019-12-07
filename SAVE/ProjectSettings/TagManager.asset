@@ -8,6 +8,10 @@ TagManager:
   - Switch
   - NPC
   - aPlayer
+  - Wall
+  - saveIndicator
+  - loadIndicator
+  - Music
   layers:
   - Default
   - TransparentFX
@@ -18,7 +22,7 @@ TagManager:
   - 
   - 
   - Floor
-  - 
+  - NPC
   - 
   - 
   - 

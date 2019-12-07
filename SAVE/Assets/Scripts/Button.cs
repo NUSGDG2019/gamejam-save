@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Button : Trigger
 {
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip audioClip;
+    [SerializeField]
+    private GameObject mesh;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +27,34 @@ public class Button : Trigger
         if (collider.tag == "aPlayer" | collider.tag == "NPC")
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
+            pressMesh();
+            TriggerOn();
+        }
+    }
+
+    void OnTriggerStay(Collider collider)
+    {
+        if (collider.tag == "NPC")
+        {
+            //If the GameObject's name matches the one you suggest, output this message in the console
             Debug.Log("Player Collision Enter");
             TriggerOn();
         }
+    }
+
+    private void OnTriggerExit(Collider collider)
+    {
+        if (collider.tag == "aPlayer" | collider.tag == "NPC")
+        {
+            mesh.GetComponent<MeshRenderer>().material.color = mesh.GetComponent<MeshRenderer>().material.color * (float)2.0;
+            mesh.transform.localScale = new Vector3(mesh.transform.localScale.x, mesh.transform.localScale.y * 2.0f, mesh.transform.localScale.z);
+        }
+    }
+
+    void pressMesh()
+    {
+        audioSource.PlayOneShot(audioClip);
+        mesh.GetComponent<MeshRenderer>().material.color = mesh.GetComponent<MeshRenderer>().material.color * (float)0.5;
+        mesh.transform.localScale = new Vector3(mesh.transform.localScale.x, mesh.transform.localScale.y * 0.5f, mesh.transform.localScale.z);
     }
 }
