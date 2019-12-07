@@ -11,6 +11,7 @@ TagManager:
   - Wall
   - saveIndicator
   - loadIndicator
+  - Music
   layers:
   - Default
   - TransparentFX
