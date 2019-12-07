@@ -27,6 +27,16 @@ public class Button : Trigger
         if (collider.tag == "aPlayer" | collider.tag == "NPC")
         {
             //If the GameObject's name matches the one you suggest, output this message in the console
+            pressMesh();
+            TriggerOn();
+        }
+    }
+
+    void OnTriggerStay(Collider collider)
+    {
+        if (collider.tag == "NPC")
+        {
+            //If the GameObject's name matches the one you suggest, output this message in the console
             Debug.Log("Player Collision Enter");
             pressMesh();
             TriggerOn();

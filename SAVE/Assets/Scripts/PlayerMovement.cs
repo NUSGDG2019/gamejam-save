@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
             platformStates.Clear();
             foreach (Transform child in platforms.transform)
             {
-                platformStates.Add(child.GetComponent<Platform>().isClear);
+                platformStates.Add(child.GetComponent<Platform>().isOpen);
             }
         }
 
@@ -99,11 +99,11 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log(i);
                 Platform platformScript = platforms.transform.GetChild(i).GetComponent<Platform>();
 
-                if (platformScript.isClear && !platformStates[i])
+                if (platformScript.isOpen && !platformStates[i])
                 {
                     platformScript.Trigger();
                 }
-                else if (!platformScript.isClear && platformStates[i])
+                else if (!platformScript.isOpen && platformStates[i])
                 {
                     platformScript.Trigger();
                 }
