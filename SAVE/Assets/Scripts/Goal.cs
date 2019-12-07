@@ -10,8 +10,6 @@ public class Goal : MonoBehaviour
     [SerializeField]
     private double rotateSpeed = 30;
     [SerializeField]
-    private Material goalMaterial;
-    [SerializeField]
     private string nextSceneName;
     [SerializeField]
     private double exitingTime = 2.0;
@@ -46,11 +44,18 @@ public class Goal : MonoBehaviour
         {
             SceneManager.LoadScene(nextSceneName);
         }
+
+        if (Input.GetKey("-"))
+        {
+            audioSource.PlayOneShot(audioClip);
+            // Go to the next Scene
+            isExiting = true;
+            player.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        this.GetComponent<MeshRenderer>().material = goalMaterial;
         audioSource.PlayOneShot(audioClip);
         // Go to the next Scene
         isExiting = true;
